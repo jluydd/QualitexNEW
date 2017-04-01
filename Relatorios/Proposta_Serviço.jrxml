@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Proposta_Serviço" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="de6f2dfc-8426-40d8-a49c-842a072b6f6a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="num" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from proposta where numproposta = $P{num}]]>
+	</queryString>
+	<field name="numproposta" class="java.lang.Integer"/>
+	<field name="cliente" class="java.lang.String"/>
+	<field name="servico" class="java.lang.String"/>
+	<field name="localservico" class="java.lang.String"/>
+	<field name="valor" class="java.lang.String"/>
+	<field name="observacao" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<group name="cliente">
+		<groupExpression><![CDATA[$F{cliente}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="14" width="199" height="47" uuid="b5992d2a-1e51-404a-9aaa-b5ec1db3ef3f"/>
+				<imageExpression><![CDATA["/Users/luyddsantos/NetBeansProjects/QualitexNEW/imagem/logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="325" y="14" width="220" height="47" uuid="43aee122-b8de-4788-b670-7ea4f93651db"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[QUALITEX ENGENHARIA E SERVIÇOS
+RODOVIA DIVALDO SURUAGY, KM 12, DISTRITO INDUSTRIAL JOSÉ APRÍGIO VILELA, VIA L,
+MARECHAL DEODORO, ALAGOAS, BRASIL CEP: 57.160-000
+CONTATO:+55 (82) 3036-1750
+EMAIL: QUALITEX@QUALITEX.COM.BR]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="199" y="14" width="173" height="20" uuid="b346b5d1-4ffd-4eaf-925d-2fbcc45ee0d6"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PROPOSTA COMERCIAL]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="55" height="20" uuid="188ab47b-0e46-4fdc-9528-eb144b766dde"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ao Sr(a):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="5" width="66" height="20" uuid="2cd04400-1b4d-494b-a75d-369f89190c35"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proposta:
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="66" y="5" width="100" height="20" uuid="b6c982e4-bf9d-4f39-96b9-718355f3658c"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numproposta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="28" width="479" height="20" uuid="90620364-adc2-44d1-9278-1cc72ad29d0c"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="288" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="64" uuid="d942fd27-e09f-4911-a0a0-5986eb84fd2b"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Prezados Senhores,
+
+Conforme solicitado por vossa empresa, a Qualitex Engenharia e Serviços, por meio deste documento, encaminha esta Proposta Comercial para execução do serviço abaixo descrito:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="155" width="555" height="34" uuid="ed210eda-4a00-4115-a4ce-48a8f1ee16a1"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[A presente proposta é válida pelo prazo de 7 (SETE) dias, contados a partir de sua data de apresentação.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="35" y="82" width="499" height="20" uuid="574331d6-7e05-4d69-927e-27cb8deab928"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{servico}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="135" width="133" height="20" uuid="338ef045-43a3-474b-a129-e41320327941"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Validade da Proposta:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="88" y="102" width="100" height="20" uuid="19babc08-9d20-45b9-ac5f-4e9d053c55d8"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="66" y="102" width="19" height="20" uuid="c2a27d89-0e54-4e48-aa99-88ed32218ce9"/>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+			<line>
+				<reportElement x="55" y="248" width="144" height="1" uuid="bad3cdaf-91f8-4fff-9067-c396d5d80dc7"/>
+			</line>
+			<line>
+				<reportElement x="325" y="247" width="144" height="1" uuid="bbfe5d7e-bb9a-4620-bf9d-222f8cb063ca"/>
+			</line>
+			<textField>
+				<reportElement x="358" y="252" width="187" height="20" uuid="8e4b23ee-226e-4a71-82f3-6fd78c5523b9"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="53" y="252" width="166" height="20" uuid="da2c939a-b82b-4f26-ae0d-74b5fa0040d7"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Qualitex Engenharia e Serviços]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="188" y="22" width="209" height="20" uuid="951b1ceb-ab71-476a-ae1b-579a04dc29d6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
